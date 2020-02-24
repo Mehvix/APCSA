@@ -44,20 +44,38 @@ public class Rational {
         den = denominator;
     }
 
-    public void add(int arg) {
-        num += den*arg;
+    public void add(Rational arg) {
+        /*
+        1. Common denom
+        2. Add numerators
+        3. Simplify(?)
+        4. Assign to final_frac
+         */
+        int cd = den * arg.getDen();
+        int frac1_newnum = num * arg.getDen();
+        int frac2_newnum = arg.getNum() * den;
+
+        num = frac1_newnum + frac2_newnum;
+        den = cd;
     }
 
-    public void subtract(int arg) {
-        num -= den*arg;
+    public void subtract(Rational arg) {
+        int cd = den * arg.getDen();
+        int frac1_newnum = num * arg.getDen();
+        int frac2_newnum = arg.getNum() * den;
+
+        num = frac1_newnum - frac2_newnum;
+        den = cd;
     }
 
-    public void multi(int arg) {
-        num *= arg;
+    public void multi(Rational arg) {
+        num *= arg.getNum();
+        den *= arg.getDen();
     }
 
-    public void divide(int arg) {
-        den *= arg;
+    public void divide(Rational arg) {
+        num *= arg.getDen();
+        den *= arg.getNum();
     }
 
     public void reduce() {
