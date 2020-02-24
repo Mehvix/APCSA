@@ -35,8 +35,10 @@ public class Rational {
     private int num;
     private int den;
 
-    public static int gcm(int a, int b) {
-        return b == 0 ? a : gcm(b, a % b);
+    public static int gcd(int a, int b) {
+        // https://en.wikipedia.org/wiki/Euclidean_algorithm
+        if (b==0) return a;
+        return gcd(b,a%b);
     }
 
     public Rational(int numerator, int denominator){
@@ -79,7 +81,7 @@ public class Rational {
     }
 
     public void reduce() {
-        int gcm = gcm(num, den);
+        int gcm = gcd(num, den);
         num = (num / gcm);
         den = (den / gcm);
     }
