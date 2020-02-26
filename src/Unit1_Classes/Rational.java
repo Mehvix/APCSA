@@ -41,49 +41,65 @@ public class Rational {
         return gcd(b,a%b);
     }
 
+    public Rational(){
+        num = 0;
+        den = 0;
+    }
     public Rational(int numerator, int denominator){
         num = numerator;
         den = denominator;
     }
 
-    public void add(Rational arg) {
+    public Rational add(Rational arg) {
         /*
         1. Common denom
         2. Add numerators
         3. Simplify(?)
         4. Assign to final_frac
          */
-        int cd = den * arg.getDen();
-        int frac1_newnum = num * arg.getDen();
-        int frac2_newnum = den * arg.getNum();
-
-        num = frac1_newnum + frac2_newnum;
-        den = cd;
-    }
-
-    public void subtract(Rational arg) {
+        Rational temp = new Rational();
         int cd = den * arg.getDen();
         int frac1_newnum = num * arg.getDen();
         int frac2_newnum = arg.getNum() * den;
 
-        num = frac1_newnum - frac2_newnum;
-        den = cd;
+        temp.num = frac1_newnum + frac2_newnum;
+        temp.den = cd;
+        return temp;
     }
 
-    public void multi(Rational arg) {
-        num *= arg.getNum();
-        den *= arg.getDen();
+
+    public Rational subtract(Rational arg) {
+        Rational temp = new Rational();
+        int cd = den * arg.getDen();
+        int frac1_newnum = num * arg.getDen();
+        int frac2_newnum = arg.getNum() * den;
+
+        temp.num = frac1_newnum - frac2_newnum;
+        temp.den = cd;
+        return temp;
     }
 
-    public void divide(Rational arg) {
-        num *= arg.getDen();
-        den *= arg.getNum();
+    public Rational multi(Rational arg) {
+        Rational temp = new Rational();
+        temp.num *= arg.getNum();
+        temp.den *= arg.getDen();
+        return temp;
     }
 
-    public void reduce() {
+    public Rational divide(Rational arg) {
+        Rational temp = new Rational();
+        temp.num *= arg.getDen();
+        temp.den *= arg.getNum();
+        return temp;
+    }
+
+    public Rational reduce() {
+        Rational temp = new Rational();
+
         int gcm = gcd(num, den);
-        num = (num / gcm);
-        den = (den / gcm);
+        temp.num = (num / gcm);
+        temp.den = (den / gcm);
+        return temp;
     }
 
     public String toString() {
@@ -91,9 +107,10 @@ public class Rational {
     }
 
     public Boolean equals(Rational arg) {
-        arg.reduce();
-        this.reduce();
-        return ((arg.getNum() == num) && (arg.getDen() == den));
+        Rational tempObj = this.reduce();
+        Rational tempArg = arg.reduce();
+
+        return ((tempObj.getNum() == tempArg.getNum()) && (tempObj.getDen() == tempArg.getDen()));
     }
 
     public int getNum() {
