@@ -35,9 +35,9 @@ public class Rational {
     private int num;
     private int den;
 
-    public static int gcd(int a, int b) {
+    private static int gcd(int a, int b) {
         // https://en.wikipedia.org/wiki/Euclidean_algorithm
-        if (b==0) return a;
+        if (b == 0) return a;
         return gcd(b,a%b);
     }
 
@@ -55,7 +55,7 @@ public class Rational {
          */
         int cd = den * arg.getDen();
         int frac1_newnum = num * arg.getDen();
-        int frac2_newnum = arg.getNum() * den;
+        int frac2_newnum = den * arg.getNum();
 
         num = frac1_newnum + frac2_newnum;
         den = cd;
@@ -90,11 +90,17 @@ public class Rational {
         return num + "/" + den;
     }
 
+    public Boolean equals(Rational arg) {
+        arg.reduce();
+        this.reduce();
+        return ((arg.getNum() == num) && (arg.getDen() == den));
+    }
+
     public int getNum() {
         return num;
     }
 
     public int getDen() {
-        return num;
+        return den;
     }
 }
