@@ -1,8 +1,8 @@
 /*
  * Programmer: Max Vogel
  * Hour: Third
- * Date: X/X/20
- * Purpose: X
+ * Date: 2/13/20
+ * Purpose: Test Hamburger.java
  */
 
 package Unit1_Classes;
