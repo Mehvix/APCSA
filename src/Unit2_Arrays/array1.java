@@ -23,18 +23,18 @@ public class array1 {
     }
 
 
-    public static void increment(int[] arg) {
+    private static void increment(int[] arg) {
         for(int i = 0; i < arg.length; i++){
             arg[i] ++;
         }
         System.out.println(convert(arg));
     }
 
-    public static void increment(int arg) {
+    private static void increment(int arg) {
         System.out.println(1 + arg);
     }
 
-    public static int smallest(int[] arg) {
+    private static int smallest(int[] arg) {
         int smallest = Integer.MAX_VALUE;
         for(int i = 0; i < arg.length; i++){
             if (arg[i] < smallest){
@@ -44,7 +44,7 @@ public class array1 {
         return smallest;
     }
 
-    public static int largest(int[] arg) {
+    private static int largest(int[] arg) {
         int largest = Integer.MIN_VALUE;
         for(int i = 0; i < arg.length; i++){
             if (arg[i] > largest){
@@ -54,7 +54,7 @@ public class array1 {
         return largest;
     }
 
-    public static Boolean repeat(int[] arg) {
+    private static Boolean repeat(int[] arg) {
         // linear time -- o(3n)
         int max = Math.abs(largest(arg));  // has to be abs because of negative numbers
         int min = Math.abs(smallest(arg));
