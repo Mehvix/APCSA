@@ -31,7 +31,10 @@ public class searchSort {
         }
     }
 
-    private static int find(int target, int[] deck) {
+    private static int linearSearch(int target, int[] deck) {
+        // O(n)
+        // can be unsorted
+
         for (int i = 0; i < deck.length; i++) {
             if (deck[i] == target) {
                 return i;
@@ -41,6 +44,8 @@ public class searchSort {
     }
 
     private static int binary_search(int target, int[] deck) {
+        // O(log(n))
+        // must be sorted
         int bottom = 0, top = deck.length, middle;
         while (bottom + 1 < deck.length){
             middle = (bottom + top)/2;
@@ -54,11 +59,13 @@ public class searchSort {
     }
 
     private static boolean verify_sort(int[] deck) {
+        // O(n)
         int previous = deck[0];
         for (int i = 1; i < deck.length; i++) {
             if (previous > deck[i]){
                 return false;
             }
+            previous = deck[i];
         }
         return true;
     }
@@ -74,38 +81,101 @@ public class searchSort {
     }
 
     private static int[] selection(int[] deck) {
+        // O(n^2)
         int smallest, smallIndex, count = 0;
         for(int i = 0; i<deck.length; i++){
-            //leftmost is smallest
-            smallest = deck[i];
+            //leftmost starts smallest
+            smallest = deck[i];  // 'key'
             smallIndex = i;
 
-            //look through rest of lst
             for(int j = i+1; j < deck.length; j ++){
-                if(smallest > deck[j]){
+                if(smallest > deck[j]){  // if there is a smaller number, find it
                     smallIndex = j;
                     smallest = deck[j];
                 }
                 count ++;
             }
-
-            deck = swap(deck, i, smallIndex);
+            deck = swap(deck, i, smallIndex);  // replace the current index with the smallest
         }
         System.out.println("selection took " + count);
         return deck;
     }
 
     private static int[] insertion(int[] deck) {
-        // todo
+        // O(n^2)
+        for (int i = 1; i < deck.length; i++) {  // iterate forwards through deck (unsorted)
+            int deck_key = deck[i];
+            int j = i - 1;
+
+            while (j >= 0 && deck[j] > deck_key) { // iterate backwards through sorted portion of deck
+                deck = swap(deck, j, j+1);
+                j --;
+                //System.out.println(array1.convert(deck));
+            }
+            //System.out.println("\n---");
+
+        }
         return deck;
     }
 
-    private static int[] merge(int[] deck) {
-        // todo
-        return deck;
+    private static void mergesort_breakdown(int[] deck, int left, int right) {
+        if (left < right) {
+            // Find the middle point
+            int middle = (left + right) / 2;
+
+            // Sort first and second halves
+            mergesort_breakdown(deck, left, middle);
+            mergesort_breakdown(deck, middle + 1, right);
+
+            // Merge the sorted halves
+            mergesort_merge(deck, left, middle, right);
+        }
+    }
+    private static void mergesort_breakdown(int[] deck) {
+        mergesort_breakdown(deck, 0, deck.length-1);
+    }
+
+
+    private static void mergesort_merge(int[] deck, int left, int middle, int right)
+    {
+        int n1 = middle - left + 1;
+        int n2 = right - middle;
+
+        int[] L = new int [n1];
+        int[] R = new int [n2];
+
+        /*Copy data to temp arrays*/
+        System.arraycopy(deck, left, L, 0, n1);
+        System.arraycopy(deck, middle+1, R, 0, n2);
+
+        int index_l = 0, index_r = 0, i = left;
+
+        while (index_l < n1 && index_r < n2){
+            if (L[index_l] <= R[index_r]){
+                deck[i] = L[index_l];
+                index_l++;
+            } else {
+                deck[i] = R[index_r];
+                index_r++;
+            }
+            i++;
+        }
+
+        while (index_l < n1) {
+            deck[i] = L[index_l];
+            index_l++;
+            i++;
+        }
+
+        while (index_r < n2) {
+            deck[i] = R[index_r];
+            index_r++;
+            i++;
+        }
     }
 
     private static int[] bubble(int[] deck) {
+        // O(n^2)
         int count = 0;
         for(int i = 0; i < deck.length; i ++){
             for(int j = 1; j < deck.length-i; j++) {
@@ -120,6 +190,7 @@ public class searchSort {
     }
 
     private static int[] bubbleBackwards(int[] deck) {
+        // O(n^2)
         int count = 0;
         for(int i = deck.length; i > 0; i --){
             for(int j = 1; j < i; j++) {
@@ -141,7 +212,7 @@ public class searchSort {
     }
 
     public static void main(String[] args) {
-        final int CARDS = 4;
+        final int CARDS = 8;
         int[] deck = generateDeck(CARDS);
 
         /*
@@ -153,21 +224,30 @@ public class searchSort {
         System.out.println(binary_search(0, deck));
         System.out.println(array1.convert(swap(deck, 0, 3)));
          */
-
+        shuffleDeck(deck);
         System.out.println("---\nBubble\nOriginal: " + array1.convert(deck));
         System.out.println(array1.convert(bubble(deck)));
 
+        shuffleDeck(deck);
         System.out.println("---\nBubble Back\nOriginal: " + array1.convert(deck));
         System.out.println(array1.convert(bubbleBackwards(deck)));
 
         shuffleDeck(deck);
         System.out.println("---\nSelection\nOriginal: " + array1.convert(deck));
-
         System.out.println(array1.convert(selection(deck)));
 
         shuffleDeck(deck);
-        System.out.println("---\nBogo\nOriginal: " + array1.convert(deck));
+        System.out.println("---\nInsertion\nOriginal: " + array1.convert(deck));
+        System.out.println(array1.convert(insertion(deck)));
 
+        shuffleDeck(deck);
+        System.out.println("---\nMerge\nOriginal: " + array1.convert(deck));
+        mergesort_breakdown(deck);
+        System.out.println(array1.convert((deck)));
+
+        shuffleDeck(deck);
+        System.out.println("---\nBogo\nOriginal: " + array1.convert(deck));
         System.out.println(array1.convert(bogo(deck)));
+
     }
 }
