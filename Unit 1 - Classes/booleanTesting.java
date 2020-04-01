@@ -5,7 +5,7 @@
  * Purpose: Learn about the boolean
  */
 
-package Unit1_Classes;
+
 
 public class booleanTesting {
     public static void main(String[] args) {

@@ -5,7 +5,7 @@
  * Purpose: hamburger
  */
 
-package Unit1_Classes;
+
 
 public class Hamburger {
     /** Hamburger

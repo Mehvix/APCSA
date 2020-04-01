@@ -4,7 +4,6 @@
  * Date: 1/22/20
  * Purpose: Review math operations
  */
-package Unit0_Review;
 
 public class mathreview                                 {
     public static void main(String[] args)              {

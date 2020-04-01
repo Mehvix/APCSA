@@ -5,7 +5,6 @@
  * Purpose: Intro to sorting
  */
 
-package Unit2_Arrays;
 
 import java.util.*;
 

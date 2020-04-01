@@ -5,7 +5,6 @@
  * Purpose: Messing around with arrays + understanding interactions
  */
 
-package Unit2_Arrays;
 
 import java.util.Arrays;
 

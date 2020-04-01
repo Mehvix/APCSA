@@ -4,7 +4,6 @@
  * Date: 1/24/20
  * Purpose: Demonstrate for loops
  */
-package Unit0_Review;
 
 public class sing {
     private static String happybday(String name) {

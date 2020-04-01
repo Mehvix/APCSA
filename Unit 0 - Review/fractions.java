@@ -5,7 +5,6 @@
  * Purpose: Handle fraction operations by splitting them into numerators and denominators
  */
 
-package Unit0_Review;
 
 import java.util.Scanner;
 import java.util.Random;

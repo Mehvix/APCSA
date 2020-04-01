@@ -5,7 +5,6 @@
  * Purpose: Learn the difference between the compare and compareTo classes
  */
 
-package Unit1_Classes;
 
 public class compare_vs_compareTo {
     /* compare:

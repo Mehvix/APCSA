@@ -5,7 +5,7 @@
  * Purpose: Test Hamburger.java
  */
 
-package Unit1_Classes;
+
 
 public class hamburgerTest {
     public static void main(String[] args) {

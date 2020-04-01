@@ -29,7 +29,7 @@ If you have extra time, create a method that will randomly fill the numerator/de
 ** Remember to test all of your methods and constructors!! share it with others so they might test it!
 */
 
-package Unit1_Classes;
+
 
 public class Rational {
     private int num;

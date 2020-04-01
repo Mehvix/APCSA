@@ -5,7 +5,7 @@
  * Purpose: tester for Rational.java
  */
 
-package Unit1_Classes;
+
 
 public class Rational_Tester {
     public static void main(String[] args) {
