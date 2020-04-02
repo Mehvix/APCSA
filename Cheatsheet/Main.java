@@ -73,7 +73,7 @@ public class Main {
     testString.trim(); // remove blank spaces!
 
 
-    ///// Exeptions Handling ///////////////////////////////////////////////////
+    ///// Exceptions Handling ///////////////////////////////////////////////////
     try {
       stringArray[10] = "X";
     } catch(Exception e) {

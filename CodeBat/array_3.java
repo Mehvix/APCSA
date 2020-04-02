@@ -66,4 +66,54 @@ public class array_3 {
         return nums;
     }
 
+    public boolean canBalance(int[] nums) {
+        int sumL = 0;
+        int sumR = 0;
+
+        for (int i : nums) sumR += i;
+
+        for (int i : nums) {
+            sumL += i;
+            sumR -= i;
+            if (sumL > sumR) return false;
+            if (sumL == sumR) return true;
+        }
+        return false;
+    }
+
+    public boolean linearIn(int[] outer, int[] inner) {
+        int count = 0;
+        int location = 0;
+        for (int value : inner) {
+            for (int j = location; j < outer.length; j++) {
+                if (outer[j] == value) {
+                    location = j;
+                    count += 1;
+                    break;
+                }
+            }
+        }
+        if (count == inner.length) {
+            return true;
+        }
+        return false;
+    }
+
+    public int[] squareUp(int n) {
+        int[] arr = new int[n * n];
+        int pass = 1, index;
+        if(n == 0) { return arr; }
+        for(int i = n-1; i < arr.length; i+=n) {
+            index = i;
+            for(int k = 1; k <= pass; k++) {
+                if(k == 0) { break; }
+                arr[index] = k;
+                index--;
+            }
+            pass++;
+        }
+        return arr;
+    }
+
+
 }
