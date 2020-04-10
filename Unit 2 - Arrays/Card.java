@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Card {
-
     // Should these be private?
     private String suit;
     private int value;
@@ -65,9 +64,13 @@ public class Card {
     // toString
     public String toString(){
         if (face != 0){
-            return face + " of " + suit;
+            String name = "";
+            if (face == 'J') name = "Jack";
+            else if (face == 'Q') name = "Queen";
+            else if (face == 'K') name = "King";
+            return name + " of " + suit + "s";
         } else {
-            return value + " of " + suit;
+            return value + " of " + suit + "s";
         }
     }
 
@@ -78,17 +81,13 @@ public class Card {
 
     // equal
     public boolean equals(Card testCard){
-        return this.suit.equals(testCard.getSuit()) && this.face == testCard.getFace();
+        return this.suit.equals(testCard.getSuit()) && this.face == testCard.getFace() && this.value == testCard.getValue();
     }
 
     public static void main(String[] args) {
 
-        List<Integer> list1 = new ArrayList<Integer>();
-        list1.add(new Integer(1));
-        list1.add(new Integer(2));
-        list1.add(new Integer(3));
-        list1.remove(1);
-        System.out.println(list1);
-
+        Card c1 = new Card("Heart", 12);
+        Card c2 = new Card("Club", 3);
+        System.out.println(c1.toString());
     }
 }
