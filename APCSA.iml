@@ -11,8 +11,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Unit 3 - Searching and Sorting" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Unit 4 - Inheritance and Polymorphism" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Unit 5 -  Recursion" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/2016" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/2017" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/2015" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/2016" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/2017" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/2018" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
