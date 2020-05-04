@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Card {
-    // Should these be private?
     private String suit;
     private int value;
     private char face;  // J Q K
