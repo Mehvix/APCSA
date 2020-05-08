@@ -46,6 +46,9 @@ public class Q1_ReviewCollector {
                         review.charAt(i + 3) == 't'){
                         cnt ++;
                     }
+                    /* alternatively, this could be :
+                   if (review.indexOf("best") >= 0) ...
+                   */
                 }
             }
         }

@@ -255,7 +255,6 @@ public class Q2_SystemLog {
         };
 
         for (Q2_LogMessage logMessage : messageList) {
-
             //  Correction: should have updated the messageList and returned removed (-2)
             if (logMessage.containsWord(keyword)) {
                 tempRemove.add(logMessage);

@@ -35,5 +35,4 @@ public class Q1_FrogSimulation {
         }
         return (float)correct/num;  // Correction : should be double, look at method for reference
     }
-
 }
