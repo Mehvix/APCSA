@@ -43,7 +43,7 @@ public class Deck {
         return temp;
     }
 
-    // toString
+    // accessor - toString
     public String toString() {
         StringBuilder str = new StringBuilder();
         for (Card i : defaultDeck){

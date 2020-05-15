@@ -40,8 +40,6 @@ public class Q4_StringFormatter {
                 }
             }
         }
-
-
         return str;
     }
 
