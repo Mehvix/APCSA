@@ -3,16 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Cheatsheet" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CodeBat" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Unit 0 - Review" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Unit 1 - Classes" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Unit 2 - Arrays" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Unit 3 - Searching and Sorting" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Unit 4 - Inheritance and Polymorphism" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Unit 5 -  Recursion" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2020 Exam" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/APClassroom/Practice" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FRQ Mocks/2020-sample" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
