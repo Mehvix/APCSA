@@ -6,11 +6,8 @@ public class MilitaryTime {
     public static void main(String[] args) {
 
         Scanner fin = new Scanner(System.in);
-        String in = "";
-        String am_pm = "";
-        String connect = "";
-        int hr = 0;
-        int min = 0;
+        String in = "", am_pm = "", connect = "";
+        int hr = 0, min = 0;
         boolean go = true;
 
         do {
@@ -25,11 +22,11 @@ public class MilitaryTime {
                     try {
                         hr = Integer.parseInt(arr[0]);
                         min = Integer.parseInt(arr[1]);
-                        
+
                         if (hr > 24 || min > 60)
                             System.out.println("Invalid format!");
 
-                        break;
+                        break; // valid format = exit while loop
                     } catch (Exception e) { // lazy
                         System.out.println("Invalid format!");
                     }
@@ -37,7 +34,7 @@ public class MilitaryTime {
             }
 
             // convert
-            am_pm = hr > 12 ? "PM" : "AM";
+            am_pm = hr > 12 ? "PM" : "AM";            
             connect = min < 10 ? ":0" : ":";
             System.out.println("Your time is " + hr % 12 + connect + min + " " + am_pm);
 
@@ -50,5 +47,7 @@ public class MilitaryTime {
             }
 
         } while (go);
+        
+        fin.close();
     }
 }

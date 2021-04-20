@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch flipflop",
+            "request": "launch",
+            "mainClass": "flipflop",
+            "projectName": "APCSA_81f9be58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Math",
+            "request": "launch",
+            "mainClass": "Tutoring.Math",
+            "projectName": "APCSA_81f9be58"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Cheatsheet.Main",
+            "projectName": "APCSA_81f9be58"
+        },
+        {
+            "type": "java",
+            "name": "Launch MilitaryTime",
+            "request": "launch",
+            "mainClass": "Tutoring.MilitaryTime",
+            "projectName": "APCSA_81f9be58"
+        }
+    ]
+}
